@@ -1,11 +1,21 @@
+[build-system]
+build-backend = "poetry.core.masonry.api"
+requires = [
+  "poetry-core",
+]
+
 [tool.poetry]
 name = "insanely_fast_whisper_cli"
 version = "0.0.0"
 description = "The fastest Whisper optimization for automatic speech recognition as a command-line interface"
-authors = ["ochen1 <o.chen1@share.epsb.ca>"]
+authors = [
+  "ochen1 <o.chen1@share.epsb.ca>",
+]
 license = "MIT"
 readme = "README.md"
-packages = [{include = "insanely_fast_whisper_cli"}]
+packages = [
+  { include = "insanely_fast_whisper_cli" },
+]
 
 [tool.poetry.dependencies]
 python = "^3.10"
@@ -17,10 +27,34 @@ torchvision = "^0.18.0"
 transformers = "^4.40.2"
 optimum = "^1.19.2"
 
-
-[build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
+[tool.poetry.group.dev.dependencies]
+pre-commit = "^3.7.1"
 
 [tool.poetry.scripts]
 insanely-fast-whisper = "insanely_fast_whisper_cli.main:main"
+
+[tool.black]
+line-length = 120
+target-version = [
+  'py312',
+]
+
+[tool.ruff]
+line-length = 120
+
+lint.select = [
+  "ALL",
+]
+lint.per-file-ignores."extra/*" = [
+  "ALL",
+]
+lint.ignore = [
+  "ANN101",
+  "D",
+]
+
+[tool.mypy]
+pretty = true
+python_version = "3.12"
+show_error_codes = true
+strict = true
