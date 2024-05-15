@@ -44,6 +44,12 @@ Transcribing an audio file with English-only Whisper model and returning timesta
 insanely-fast-whisper --model openai/whisper-base.en your_audio_file.wav
 ```
 
+On CPU with small model:
+
+```bash
+insanely-fast-whisper --device cpu --model openai/whisper-small your_audio_file.wav
+```
+
 ## Output
 
 The tool will save an SRT transcription of your audio file in the current working directory.
