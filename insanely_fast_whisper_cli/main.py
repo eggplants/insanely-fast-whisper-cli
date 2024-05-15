@@ -98,8 +98,7 @@ def main(  # noqa: PLR0913
     )
 
     # Output the results
-    click.echo(f"[+] {outputs}")
-    click.echo("[+] Transcription complete.")
+    click.echo("[+] Transcription completed.")
     end_time = time.perf_counter()
     elapsed_time = end_time - start_time
     click.echo(f"[+] ASR took {elapsed_time:.2f} seconds.")
