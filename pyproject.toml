@@ -1,0 +1,26 @@
+[tool.poetry]
+name = "insanely_fast_whisper_cli"
+version = "0.0.0"
+description = "The fastest Whisper optimization for automatic speech recognition as a command-line interface"
+authors = ["ochen1 <o.chen1@share.epsb.ca>"]
+license = "MIT"
+readme = "README.md"
+packages = [{include = "insanely_fast_whisper_cli"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+accelerate = "^0.30.1"
+click = "^8.1.7"
+torch = "^2.3.0"
+torchaudio = "^2.3.0"
+torchvision = "^0.18.0"
+transformers = "^4.40.2"
+optimum = "^1.19.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+insanely-fast-whisper = "insanely_fast_whisper_cli.main:main"
